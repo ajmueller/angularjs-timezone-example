@@ -13,7 +13,7 @@ async function createEvent(req, res) {
 		res.status(201).json(event);
 	}
 	catch(err) {
-		res.json(err);
+		console.log(err);
 	}
 }
 
@@ -24,7 +24,7 @@ async function getAllEvents(req, res) {
 		res.json(events);
 	}
 	catch(err) {
-		res.json(err);
+		console.log(err);
 	}
 }
 
@@ -43,6 +43,6 @@ async function getEvent(req, res) {
 		res.json(event);
 	}
 	catch(err) {
-		res.json(err);
+		console.log(err);
 	}
 }

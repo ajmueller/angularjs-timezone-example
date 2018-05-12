@@ -1,8 +1,10 @@
-const { Location } = require('../models');
+const { Event, Location } = require('../models');
 
 module.exports = {
 	createLocation,
-	getAllLocations
+	getAllLocations,
+	getEventsForLocation,
+	getLocation
 };
 
 async function createLocation(req, res) {
@@ -12,7 +14,7 @@ async function createLocation(req, res) {
 		res.status(201).json(location);
 	}
 	catch(err) {
-		res.json(err);
+		console.log(err);
 	}
 }
 
@@ -23,6 +25,32 @@ async function getAllLocations(req, res) {
 		res.json(locations);
 	}
 	catch(err) {
-		res.json(err);
+		console.log(err);
+	}
+}
+
+async function getLocation(req, res) {
+	try {
+		const location = await Location.findById(req.params.id);
+
+		res.json(location);
+	}
+	catch(err) {
+		console.log(err);
+	}
+}
+
+async function getEventsForLocation(req, res) {
+	try {
+		const events = await Event.findAll({
+			where: {
+				LocationId: req.params.id
+			}
+		});
+
+		res.json(events);
+	}
+	catch(err) {
+		console.log(err);
 	}
 }
