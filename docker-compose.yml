@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  database:
+    image: mdillon/postgis:9.6
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=
+    ports:
+      # expose port 5432 to be able to access the database from a Postgres client on the host
+      - "5432:5432"
+    volumes:
+      - database:/var/lib/postgresql/data
+  web:
+    build: .
+    environment:
+      - NODE_ENV=local
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/opt/app:delegated
+      - notused:/opt/app/node_modules
+    depends_on:
+      - database
+    command: npm start
+
+volumes:
+  database:
+  notused:
