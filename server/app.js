@@ -10,7 +10,8 @@ const timezone = require('./middleware/timezone');
 
 // Controllers
 const {
-	createLocation
+	createLocation,
+	getAllLocations
 } = require('./controllers/location');
 
 app.use(bodyParser.json());
@@ -20,6 +21,8 @@ app.get('/', (req, res) => {
 	res.send('Hello World!');
 });
 
+// Location Routes
 app.post('/location/', [geocode, timezone], createLocation);
+app.get('/location/', getAllLocations);
 
 app.listen(3000, () => console.log('Listening on port 3000'));
