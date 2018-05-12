@@ -28,15 +28,15 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client')));
 
 // Location Routes
-app.post('/locations/', [geocode, timezone], createLocation);
-app.get('/locations/', getAllLocations);
-app.get('/locations/:id/', getLocation);
-app.get('/locations/:id/events/', getEventsForLocation);
+app.post('/api/locations/', [geocode, timezone], createLocation);
+app.get('/api/locations/', getAllLocations);
+app.get('/api/locations/:id/', getLocation);
+app.get('/api/locations/:id/events/', getEventsForLocation);
 
 // Event Routes
-app.post('/events/', createEvent);
-app.get('/events/', getAllEvents);
-app.get('/events/:id/', getEvent);
+app.post('/api/events/', createEvent);
+app.get('/api/events/', getAllEvents);
+app.get('/api/events/:id/', getEvent);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
