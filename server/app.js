@@ -13,6 +13,11 @@ const {
 	createLocation,
 	getAllLocations
 } = require('./controllers/location');
+const {
+	createEvent,
+	getAllEvents,
+	getEvent
+} = require('./controllers/event');
 
 app.use(bodyParser.json());
 
@@ -24,5 +29,10 @@ app.get('/', (req, res) => {
 // Location Routes
 app.post('/location/', [geocode, timezone], createLocation);
 app.get('/location/', getAllLocations);
+
+// Event Routes
+app.post('/event/', createEvent);
+app.get('/event/', getAllEvents);
+app.get('/event/:id/', getEvent);
 
 app.listen(3000, () => console.log('Listening on port 3000'));
