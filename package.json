@@ -4,12 +4,15 @@
   "description": "A simple example showcasing how to handle reading and writing dates in different timezones with AngularJS.",
   "main": "server/app.js",
   "scripts": {
-    "start": "node ./server/app.js",
+    "start": "nodemon ./server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alex Mueller <ajmueller6@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@google/maps": "^0.4.6",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3"
   }
 }

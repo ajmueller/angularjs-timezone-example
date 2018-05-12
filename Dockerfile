@@ -5,7 +5,7 @@ ENV APP_HOME /opt/app
 
 # Install Required dependencies
 RUN apt-get update -qq && apt-get install -y build-essential
-RUN npm install -g sequelize-cli@4.0.0
+RUN npm install -g sequelize-cli@4.0.0 nodemon@1.17.4
 
 # Bootstrap Application
 RUN mkdir -p $APP_HOME
