@@ -1,0 +1,79 @@
+<h1>New Location</h1>
+<form name="locationNewForm">
+	<div
+		flex
+		layout="row"
+		layout-wrap>
+		<div
+			flex="100"
+			flex-gt-md="50">
+			<md-input-container class="md-block">
+				<label for="streetAddress">Street Address</label>
+				<input
+					type="text"
+					ng-model="$ctrl.location.streetAddress"
+					id="streetAddress"
+					name="streetAddress"
+					required>
+			</md-input-container>
+		</div>
+		<div
+			flex="100"
+			flex-gt-md="50">
+			<md-input-container class="md-block">
+				<label for="streetAddress2">Street Address 2</label>
+				<input
+					type="text"
+					ng-model="$ctrl.location.streetAddress2"
+					id="streetAddress2"
+					name="streetAddress2">
+			</md-input-container>
+		</div>
+		<div
+			flex="100"
+			flex-gt-sm="33">
+			<md-input-container class="md-block">
+				<label for="city">City</label>
+				<input
+					type="text"
+					ng-model="$ctrl.location.city"
+					id="city"
+					name="city"
+					required>
+			</md-input-container>
+		</div>
+		<div
+			flex="100"
+			flex-gt-sm="33">
+			<md-input-container class="md-block">
+				<label for="state">State</label>
+				<input
+					type="text"
+					ng-model="$ctrl.location.state"
+					id="state"
+					name="state"
+					required>
+			</md-input-container>
+		</div>
+		<div
+			flex="100"
+			flex-gt-sm="33">
+			<md-input-container class="md-block">
+				<label for="zipCode">ZIP Code</label>
+				<input
+					type="text"
+					ng-model="$ctrl.location.zipCode"
+					id="zipCode"
+					name="zipCode"
+					required>
+			</md-input-container>
+		</div>
+		<div flex="100">
+			<md-button
+				ng-disabled="locationNewForm.$invalid"
+				ng-click="$ctrl.save()"
+				class="md-primary md-raised"
+				type="submit">Save</md-button>
+		</div>
+	</div>
+</form>
