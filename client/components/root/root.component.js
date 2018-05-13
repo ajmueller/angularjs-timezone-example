@@ -6,7 +6,7 @@
 	angular
 		.module('root')
 		.config(['$urlRouterProvider', function($urlRouterProvider) {
-			$urlRouterProvider.otherwise('/locations');
+			$urlRouterProvider.otherwise('/home');
 		}])
 		.component('root', root);
 })(window.angular);

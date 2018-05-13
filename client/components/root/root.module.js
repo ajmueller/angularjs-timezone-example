@@ -2,6 +2,8 @@
 	angular.module('root', [
 			'ui.router',
 			'ngMaterial',
-			'ngMessages'
+			'ngMessages',
+			'ngMaterialDatePicker',
+			'kcd.directives'
 		]);
 })(window.angular);

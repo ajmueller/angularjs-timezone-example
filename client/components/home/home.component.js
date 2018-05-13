@@ -1,22 +1,27 @@
 (function(angular) {
-	var locations = {
+	var home = {
 		bindings: {
-			locations: '<'
+			locations: '<',
+			events: '<'
 		},
-		templateUrl: 'components/locations/locations.html'
+		templateUrl: 'components/home/home.html'
 	};
 
 	angular
 		.module('root')
-		.component('locations', locations)
+		.component('home', home)
 		.config(['$stateProvider', function($stateProvider) {
 			$stateProvider
-				.state('locations', {
-					url: '/locations',
-					component: 'locations',
+				.state('home', {
+					url: '/home',
+					component: 'home',
 					resolve: {
 						locations: function(LocationsService) {
 							return LocationsService.getAll();
+						},
+
+						events: function(EventsService) {
+							return EventsService.getAll();
 						}
 					}
 				});

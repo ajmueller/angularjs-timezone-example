@@ -1,0 +1,53 @@
+<h1>New Event</h1>
+<form name="eventNewForm">
+	<div
+		flex
+		layout="row"
+		layout-wrap>
+		<div
+			flex="100"
+			flex-gt-xs="50">
+			<md-input-container class="md-block">
+				<label for="location">Location</label>
+				<md-select
+					ng-model="$ctrl.event.LocationId"
+					ng-change="$ctrl.setLocation()"
+					id="location"
+					name="location"
+					required>
+					<md-option
+						ng-repeat="location in $ctrl.locations"
+						ng-value="location.id">
+						{{ location.streetAddress }} {{ location.streetAddress2 }}<br />{{ location.city }}, {{ location.state }} {{ location.zipCode }}
+					</md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+		<div
+			flex="100"
+			flex-gt-xs="50"
+			kcd-recompile="$ctrl.event.timezoneOffset">
+			<md-input-container class="md-block">
+				<label>Date</label>
+				<input
+					mdc-datetime-picker
+					ng-model="$ctrl.event.datetime"
+					ng-model-options="{ timezone: $ctrl.event.timezoneOffset }"
+					date="true"
+					time="true"
+					short-time="true"
+					type="text"
+					format="MMM D, YYYY h:mm a Z"
+					required>
+			</md-input-container>
+		</div>
+		<div flex="100">
+			<md-button
+				ng-disabled="eventNewForm.$invalid"
+				ng-click="$ctrl.save()"
+				class="md-primary md-raised"
+				type="submit">Save</md-button>
+			<md-button ui-sref="home()">Cancel</md-button>
+		</div>
+	</div>
+</form>

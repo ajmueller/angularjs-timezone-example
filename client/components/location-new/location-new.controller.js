@@ -12,7 +12,7 @@
 		ctrl.save = function() {
 			LocationsService.create(ctrl.location)
 				.then(function(results) {
-					$state.go('locations');
+					$state.go('home');
 				});
 		};
 	};
