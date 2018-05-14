@@ -1,5 +1,7 @@
 <h1>New Event</h1>
-<form name="eventNewForm">
+<form
+	name="eventNewForm"
+	ng-submit="$ctrl.save()">
 	<div
 		flex
 		layout="row"
@@ -44,7 +46,6 @@
 		<div flex="100">
 			<md-button
 				ng-disabled="eventNewForm.$invalid"
-				ng-click="$ctrl.save()"
 				class="md-primary md-raised"
 				type="submit">Save</md-button>
 			<md-button ui-sref="home()">Cancel</md-button>
