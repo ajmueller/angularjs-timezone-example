@@ -10,17 +10,19 @@
 	</md-list-item>
 </md-list>
 
-<h1>Events</h1>
-<p>
-	<md-button
-		ui-sref="eventNew()"
-		class="md-primary md-raised">New Event</md-button>
-</p>
-<md-list>
-	<md-list-item ng-repeat="event in $ctrl.events">
-		<p>
-			{{ event.datetime | date:"EEEE, MMMM d, y 'at' h:mma":event.timezoneOffset }}, offset of {{ event.timezoneOffset }}<br />
-			{{ event.datetime | date:"EEEE, MMMM d, y 'at' h:mma" }} in your timezone
-		</p>
-	</md-list-item>
-</md-list>
+<div ng-if="$ctrl.locations.length">
+	<h1>Events</h1>
+	<p>
+		<md-button
+			ui-sref="eventNew()"
+			class="md-primary md-raised">New Event</md-button>
+	</p>
+	<md-list>
+		<md-list-item ng-repeat="event in $ctrl.events">
+			<p>
+				{{ event.datetime | date:"EEEE, MMMM d, y 'at' h:mma":event.timezoneOffset }}, offset of {{ event.timezoneOffset }}<br />
+				{{ event.datetime | date:"EEEE, MMMM d, y 'at' h:mma" }} in your timezone
+			</p>
+		</md-list-item>
+	</md-list>
+</div>

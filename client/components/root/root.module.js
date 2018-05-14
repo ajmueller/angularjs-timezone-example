@@ -4,6 +4,8 @@
 			'ngMaterial',
 			'ngMessages',
 			'ngMaterialDatePicker',
-			'kcd.directives'
+			'kcd.directives',
+			'ngAnimate',
+			'angular-loading-bar'
 		]);
 })(window.angular);
