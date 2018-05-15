@@ -13,7 +13,7 @@
 				<label for="location">Location</label>
 				<md-select
 					ng-model="$ctrl.event.LocationId"
-					ng-change="$ctrl.setLocation()"
+					ng-change="$ctrl.setTimezoneOffset()"
 					id="location"
 					name="location"
 					required>
@@ -35,6 +35,7 @@
 					mdc-datetime-picker
 					ng-model="$ctrl.event.datetime"
 					ng-model-options="{ timezone: $ctrl.event.timezoneOffset }"
+					ng-change="$ctrl.setTimezoneOffset()"
 					date="true"
 					time="true"
 					short-time="true"

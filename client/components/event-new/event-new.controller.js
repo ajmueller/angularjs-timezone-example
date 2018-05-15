@@ -16,7 +16,7 @@
 				});
 		};
 
-		ctrl.setLocation = function() {
+		ctrl.setTimezoneOffset = function() {
 			var datetime = ctrl.event.datetime;
 			var timezoneName = ctrl.locations.find(function(location) {
 				return location.id === ctrl.event.LocationId;
